@@ -282,7 +282,7 @@ def notify_channel_topic(prefix, message, highlighted):
     if weechat.config_get_plugin("show_channel_topic") == "on":
         regex = re.compile(
             r'^\w+ has (?:changed|unset) topic for ([^\s]+)' +
-                '(?:(?: from "(?:(?:"\w|[^"])+)")? to "((?:"\w|[^"])+)")?',
+                r'(?:(?: from "(?:(?:"\w|[^"])+)")? to "((?:"\w|[^"])+)")?',
             re.UNICODE)
         match = regex.match(message)
         if match:
